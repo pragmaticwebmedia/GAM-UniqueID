@@ -1,0 +1,47 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script>
+<script>
+  // Function to generate a fixed-length unique ID from the URL
+  function generateUniqueIDFromURL() {
+    const url = window.location.href; // Get the current URL
+    const hash = md5(url); // Calculate the md5 hash of the URL
+    const uniqueID = hash.substr(0, 16); // Take the first 16 characters of the hash
+    return uniqueID;
+  }
+
+  // Get the unique ID and display it
+  const uniqueID = generateUniqueIDFromURL();
+  console.log("Unique ID:", uniqueID);
+</script>
+
+<html>
+ <head>
+   <!-- Start GPT Tag -->
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var gptadslots = [];
+  var googletag = googletag || {cmd:[]};
+</script>
+<script>
+  googletag.cmd.push(function() {
+    
+    //Adslot 1 declaration
+    gptadslots.push(googletag.defineSlot('/6355419/travel', [[728,90]], 'div-gpt-ad-3720665-1')
+                             .addService(googletag.pubads()));
+
+   
+googletag.pubads().setTargeting('UniqueID', uniqueID)
+   .setTargeting('Test', ['refresh']);
+    googletag.enableServices();
+  });
+</script>
+<!-- End GPT Tag -->
+  </head>
+  <body>
+    <div id='div-gpt-ad-3720665-1'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-3720665-1');
+});
+</script>
+</div>
+  </body>
+</html>
